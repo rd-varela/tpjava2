@@ -105,6 +105,23 @@ button {
   cursor: pointer;
 }
 
+#muteBtn {
+  display: flex;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 40px;
+  color: #131313;
+}
+#muteBtn:hover {
+  cursor: pointer;
+}
+
+.muted {
+  color: #706e68 !important;
+  text-decoration: line-through;
+}
+
 .darkMode {
   background-color: #131313;
 }
@@ -138,6 +155,9 @@ button {
 }
 .darkMode #inputTareas {
   border-bottom: #EDEADE 1px solid;
+}
+.darkMode #muteBtn {
+  color: #EDEADE;
 }
 
 @media only screen and (max-width: 600px) {

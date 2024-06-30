@@ -107,6 +107,23 @@ button{
     }
 }
 
+#muteBtn{
+    display: flex;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 40px;
+    color: #131313;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.muted{
+    color: #706e68 !important;
+    text-decoration: line-through;
+}
+
 .darkMode{
     background-color: #131313;
     header{
@@ -147,6 +164,9 @@ button{
     }
     #inputTareas{
         border-bottom: #EDEADE 1px solid;
+    }
+    #muteBtn{
+        color: #EDEADE;
     }
 }
 

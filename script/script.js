@@ -3,6 +3,36 @@ let listaTareas = document.getElementById('listaTareas')
 let sfxAdd = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Add.mp3?raw=true");
 let sfxDel = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Substract.mp3?raw=true")
 let sfxComp = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Tick.mp3?raw=true")
+let sfxClear = new Audio("sfx/clear.mp3")
+let isMuted = false;
+
+if (localStorage.getItem('isMuted')) {
+    isMuted = localStorage.getItem('isMuted') === 'true';
+    updateMuteButton();
+}
+
+document.getElementById('muteBtn').addEventListener('click', function() {
+    isMuted = !isMuted;
+    updateMuteButton();
+    
+
+    localStorage.setItem('isMuted', isMuted);
+});
+
+function updateMuteButton() {
+    const muteBtn = document.getElementById('muteBtn');
+    if (isMuted) {
+        muteBtn.classList.add('muted');
+    } else {
+        muteBtn.classList.remove('muted');
+    }
+}
+
+function playSound(audio) {
+    if (!isMuted) {
+        audio.play();
+    }
+}
 
 cargarTareas();
 
@@ -13,7 +43,7 @@ function agregarTarea(){
         li.textContent = textoTareas;
         listaTareas.appendChild(li);
         inputTareas.value = '';
-        sfxAdd.play();
+        playSound(sfxAdd);
         li.addEventListener('click', completarTarea);
         let deleteBtn = document.createElement('button');
         deleteBtn.textContent = '-';
@@ -32,16 +62,22 @@ inputTareas.addEventListener("keydown", function(event) {
 function completarTarea(event) {
     let tarea = event.target;
     tarea.classList.toggle('completado')
-    sfxComp.play();
+    playSound(sfxComp);
     guardarTareas();
 }
 
 function borrarTarea(event){
     let tarea = event.target.parentElement;
     listaTareas.removeChild(tarea);
-    sfxDel.play();
+    playSound(sfxDel);
     guardarTareas();
 }
+
+clearButton.addEventListener('click', function() {
+    listaTareas.innerHTML = '';
+    playSound(sfxClear);
+    localStorage.removeItem('tareas');
+});
 
 function guardarTareas(){
     const tareas = [];
@@ -80,11 +116,6 @@ function cargarTareas(){
             });
         }
 }
-
-clearButton.addEventListener('click', function() {
-    listaTareas.innerHTML = '';
-    localStorage.removeItem('tareas');
-});
 
 document.addEventListener('DOMContentLoaded', function () {
     const darkMode = document.getElementById('darkMode');
