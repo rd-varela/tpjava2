@@ -108,10 +108,11 @@ button {
 #muteBtn {
   display: flex;
   position: absolute;
-  top: 5px;
-  left: 10px;
+  top: 0px;
+  left: 15px;
   font-size: 40px;
   color: #131313;
+  font-family: "Segoe UI";
 }
 #muteBtn:hover {
   cursor: pointer;
