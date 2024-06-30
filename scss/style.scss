@@ -57,7 +57,7 @@ body{
     height: 25px;
     background-color: rgba(255, 255, 255, 0);
     border: none;
-    border-bottom: rgba(0, 0, 0, 0.753) 1px solid;
+    border-bottom: #131313 1px solid;
 }
 :focus{
     outline: none;
@@ -138,6 +138,9 @@ button{
     }
     .completado{
         color: #706e68;
+    }
+    #inputTareas{
+        border-bottom: #EDEADE 1px solid;
     }
 }
 
