@@ -1,5 +1,8 @@
 let inputTareas = document.getElementById('inputTareas');
 let listaTareas = document.getElementById('listaTareas')
+let sfxAdd = new Audio("sfx/Add.mp3");
+let sfxDel = new Audio("sfx/Substract.mp3")
+let sfxComp = new Audio("sfx/Tick.mp3")
 
 cargarTareas();
 
@@ -10,6 +13,7 @@ function agregarTarea(){
         li.textContent = textoTareas;
         listaTareas.appendChild(li);
         inputTareas.value = '';
+        sfxAdd.play();
         li.addEventListener('click', completarTarea);
         let deleteBtn = document.createElement('button');
         deleteBtn.textContent = '-';
@@ -28,12 +32,14 @@ inputTareas.addEventListener("keydown", function(event) {
 function completarTarea(event) {
     let tarea = event.target;
     tarea.classList.toggle('completado')
+    sfxComp.play();
     guardarTareas();
 }
 
 function borrarTarea(event){
     let tarea = event.target.parentElement;
     listaTareas.removeChild(tarea);
+    sfxDel.play();
     guardarTareas();
 }
 
