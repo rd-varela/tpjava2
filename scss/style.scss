@@ -11,6 +11,10 @@
     letter-spacing: 2px;
     color: #131313;
     -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    &:focus{
+        outline: none !important;
+      }
 }
 
 body{
