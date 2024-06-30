@@ -3,7 +3,7 @@ let listaTareas = document.getElementById('listaTareas')
 let sfxAdd = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Add.mp3?raw=true");
 let sfxDel = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Substract.mp3?raw=true")
 let sfxComp = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Tick.mp3?raw=true")
-let sfxClear = new Audio("sfx/clear.mp3")
+let sfxClear = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Clear.mp3?raw=true")
 let isMuted = false;
 
 if (localStorage.getItem('isMuted')) {
