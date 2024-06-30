@@ -1,8 +1,8 @@
 let inputTareas = document.getElementById('inputTareas');
 let listaTareas = document.getElementById('listaTareas')
-let sfxAdd = new Audio("sfx/Add.mp3");
-let sfxDel = new Audio("sfx/Substract.mp3")
-let sfxComp = new Audio("sfx/Tick.mp3")
+let sfxAdd = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Add.mp3?raw=true");
+let sfxDel = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Substract.mp3?raw=true")
+let sfxComp = new Audio("https://github.com/rd-varela/tpjava2/blob/main/sfx/Tick.mp3?raw=true")
 
 cargarTareas();
 

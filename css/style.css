@@ -83,11 +83,13 @@ button {
 #clearButton span {
   color: #EDEADE;
 }
-
 #clearButton:active {
   padding: 3.5px 7.5px;
   font-size: 17.5px;
   margin-bottom: 21.5px;
+}
+#clearButton:hover {
+  cursor: pointer;
 }
 
 .darkModeBtnDefault {
@@ -98,6 +100,9 @@ button {
   position: absolute;
   top: 15px;
   right: 15px;
+}
+.darkModeBtnDefault:hover {
+  cursor: pointer;
 }
 
 .darkMode {
